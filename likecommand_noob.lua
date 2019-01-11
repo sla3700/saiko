@@ -76,7 +76,7 @@ coroutine.wrap(function()
     local client7 = api()
     local client8 = api()
     local client9 = api()
-	local client10 = api()
+    local client10 = api()
     local client11 = api()
     local client12 = api()
     local client13 = api()
@@ -87,7 +87,7 @@ coroutine.wrap(function()
     local client18 = api()
     local client19 = api()
     local client20 = api()
-	client.connect("name#0000", "passwor")  -- Logs in another account to like
+    client.connect("name#0000", "passwor")  -- Logs in another account to like
     client1.connect("name#0000", "passwor") -- Logs in another account to like
     client2.connect("name#0000", "passwor") -- Logs in another account to like
     client3.connect("name#0000", "passwor") -- Logs in another account to like
@@ -97,32 +97,31 @@ coroutine.wrap(function()
     client7.connect("name#0000", "passwor") -- Logs in another account to like
     client8.connect("name#0000", "passwor") -- Logs in another account to like
     client9.connect("name#0000", "passwor")  -- Logs in another account to like
-	client10.connect("name#0000", "passwor") -- Logs in another account to like
-	client11.connect("name#0000", "passwor") -- Logs in another account to like
-	client12.connect("name#0000", "passwor")  -- Logs in another account to like
-	client13.connect("name#0000", "passwor")  -- Logs in another account to like
-	client14.connect("name#0000", "passwor")  -- Logs in another account to like
-	client15.connect("name#0000", "passwor")  -- Logs in another account to like
+    client10.connect("name#0000", "passwor") -- Logs in another account to like
+    client11.connect("name#0000", "passwor") -- Logs in another account to like
+    client12.connect("name#0000", "passwor")  -- Logs in another account to like
+    client13.connect("name#0000", "passwor")  -- Logs in another account to like
+    client14.connect("name#0000", "passwor")  -- Logs in another account to like
+    client15.connect("name#0000", "passwor")  -- Logs in another account to like
   -- add more if you want, or remove if you want
-	local again = 0
+     local again = 0
 	timer.setInterval(8000, function()
 		if again < 0 or again > os.time() then return end
 
-		coroutine.wrap(function()
-			local message, command, value
-			local i, j = getUnreadMessages()
-			if i > j then return end
-			again = -1
-
-			local msg = { }
-			for m = i, j do
-				message = client.getMessage(tostring(m), location) -- get message
-				if message and message.content and message.author ~= client.getUser() then
-					local mid = string.match(message.content, "^!like(.-)$") 
-					if mid then
-						mid = string.match(mid, "%S+")
-						if mid then
-							print(mid)
+	  coroutine.wrap(function()
+	local message, command, value
+      local i, j = getUnreadMessages()
+   if i > j then return end
+  again = -1
+local msg = { }
+  for m = i, j do
+    message = client.getMessage(tostring(m), location) -- get message
+	if message and message.content and message.author ~= client.getUser() then
+	   local mid = string.match(message.content, "^!like(.-)$") 
+	       if mid then
+		 mid = string.match(mid, "%S+")
+	            if mid then
+			    print(mid)
                             msg[#msg + 1] = DarLike()
                             print(client.likeMessage(mid, location)) --give like 
                             print(client1.likeMessage(mid, location)) 
@@ -134,12 +133,12 @@ coroutine.wrap(function()
                             print(client7.likeMessage(mid, location)) 
                             print(client8.likeMessage(mid, location))
                             print(client9.likeMessage(mid, location))
-							print(client10.likeMessage(mid, location))
-							print(client11.likeMessage(mid, location))
+			    print(client10.likeMessage(mid, location))
+			    print(client11.likeMessage(mid, location))
                             print(client12.likeMessage(mid, location))
                             print(client13.likeMessage(mid, location))
                             print(client14.likeMessage(mid, location))
-							print(client15.likeMessage(mid, location))
+			    print(client15.likeMessage(mid, location))
                         -- remove or add if you want.
                         end
 					end
