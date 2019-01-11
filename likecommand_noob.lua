@@ -1,3 +1,5 @@
+-- A simple command bot that give like with a command through a message in the topic @(var 'location'). (!like message id)
+-- Requires a file 'lastSeen' with initial value "1"
 local json = require("json")
 local timer = require("timer")
 local http = require("coro-http")
@@ -21,7 +23,7 @@ end
 
 local lastSeen = tonumber(readFile("lastSeen", "*l"))
 
-local location = { f = 5, t = 917519 } -- the topic where !profile is allowed
+local location = { f = 5, t = 917519 } -- the topic for use "!like"
 
 local normalizeCommand = function(cmd)
 	return (string.gsub(string.lower(cmd), "  +", " "))
