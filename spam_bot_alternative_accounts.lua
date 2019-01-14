@@ -23,7 +23,7 @@ coroutine.wrap(function()
   again = os.time() + 60
   times = times + 1
     if times == 7 then -- number of times to a diferente menssage
-  print(client.answerTopic(account[1].msg, location)) // change "[1]" to [0] if you want the same account posting another thing
+  print(client.answerTopic(account[1].msg, location)) -- change "[1]" to [0] if you want the same account posting another thing
   times = 0
     end
         end)()
