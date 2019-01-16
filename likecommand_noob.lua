@@ -119,7 +119,7 @@ local msg = { }
 	if message and message.content and message.author ~= client.getUser() then
 	   local mid = string.match(message.content, "^!like(.-)$") 
 	       if mid then
-		 mid = string.match(mid, "%S+")
+		 mid = message.post
 	            if mid then
 			    print(mid)
                             msg[#msg + 1] = DarLike()
