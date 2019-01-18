@@ -4,11 +4,9 @@ local location = { f = 5, t = 917882 } -- the topic where !roll is allowed
 local json = require("json")
 local timer = require("timer")
 local http = require("coro-http")
-
 local api = require("fromage")
 local client = api()
 local enum = client.enumerations()
-local fromage = api()
 local limit = 20 -- max number
 local randomnumber = function()
 	return math.random(1, 20) -- math.random(lower, upper) generates integer numbers between lower and upper (both inclusive).
